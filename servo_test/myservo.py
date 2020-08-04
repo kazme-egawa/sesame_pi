@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 
 
 def main(degree):
+    print(degree)
     servo_pin = 18
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(servo_pin, GPIO.OUT)
