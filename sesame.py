@@ -41,7 +41,7 @@ def KeyOpener():
     GPIO.setup(servo_pin, GPIO.OUT)
     servo = GPIO.PWM(servo_pin, 50)
     servo.start(0.0)
-    servo.changeDutyCycle(servo_state_open)
+    servo.ChangeDutyCycle(servo_state_open)
     time.sleep(1.0)
     GPIO.cleanup()
 
@@ -51,7 +51,7 @@ def KeyCloser():
     GPIO.setup(servo_pin, GPIO.OUT)
     servo = GPIO.PWM(servo_pin, 50)
     servo.start(0.0)
-    servo.changeDutyCycle(servo_state_open)
+    servo.ChangeDutyCycle(servo_state_open)
     time.sleep(1.0)
     GPIO.cleanup()
 
@@ -109,7 +109,7 @@ def message_text(event):
             TextSendMessage('閉めとくね')
         )
     else:
-        # オウム返し
+        # 木霊
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=event.message.text)
