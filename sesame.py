@@ -31,27 +31,27 @@ line_bot_api = LineBotApi(channel_access_token)
 handler = WebhookHandler(channel_secret)
 
 # サーボモータを回す関数の登録
-servo_pin = 18
-servo_state_open = 7.0
-servo_state_close = 2.5
+SERVO_PIN = 18
+SERVO_OPEN_STATE = 7.0
+SERVO_CLOSE_STATE = 2.5
 
 
 def KeyOpener():
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(servo_pin, GPIO.OUT)
-    servo = GPIO.PWM(servo_pin, 50)
+    GPIO.setup(SERVO_PIN, GPIO.OUT)
+    servo = GPIO.PWM(SERVO_PIN, 50)
     servo.start(0.0)
-    servo.ChangeDutyCycle(servo_state_open)
+    servo.ChangeDutyCycle(SERVO_OPEN_STATE)
     time.sleep(1.0)
     GPIO.cleanup()
 
 
 def KeyCloser():
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(servo_pin, GPIO.OUT)
-    servo = GPIO.PWM(servo_pin, 50)
+    GPIO.setup(SERVO_PIN, GPIO.OUT)
+    servo = GPIO.PWM(SERVO_PIN, 50)
     servo.start(0.0)
-    servo.ChangeDutyCycle(servo_state_open)
+    servo.ChangeDutyCycle(SERVO_CLOSE_STATE)
     time.sleep(1.0)
     GPIO.cleanup()
 
