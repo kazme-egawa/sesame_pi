@@ -10,7 +10,7 @@ def main(degree):
     GPIO.setup(servo_pin, GPIO.OUT)
     servo = GPIO.PWM(servo_pin, 50)
     servo.start(0.0)
-    servo.ChangeDutyCycle(degree)
+    servo.ChangeDutyCycle(float(degree))
     time.sleep(1.0)
     GPIO.cleanup()
 
